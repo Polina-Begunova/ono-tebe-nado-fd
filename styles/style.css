@@ -293,12 +293,12 @@
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;  
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0 50px 82px;
 }
 
 .footer__menu {
-  justify-self: center; 
+  justify-self: center;
 }
 
 .footer__menu-list {
