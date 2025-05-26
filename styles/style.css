@@ -60,14 +60,20 @@
 .header__address {
   justify-self: end;
   max-width: 240px;
-  line-height: 135%;
+  /* line-height: 135%; - перенесено в общий класс address */
 }
 
 .address {
   display: block;
   font-style: normal;
   font-weight: 400;
+  line-height: 135%; /* line-height: 135%; - перенесено в общий класс address из .header__address */
 }
+
+.address__link {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+} /*задан одинаковый класс в footer и header для адреса*/
 
 .cover {
   position: relative;
@@ -78,12 +84,10 @@
   margin-bottom: 195px;
 }
 
-.cover .overlay {
+.overlay {
+  /*  стиль оверлея для шапки и карточек задан разово через класс и переиспользован*/
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0; /* использован шорткат для сокращения уода вместо четрых координат top: 0; right: 0; bottom: 0; left: 0; */
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
@@ -188,34 +192,21 @@
   min-height: 596px;
   justify-content: space-between;
   padding: 45px 40px;
-}
-
-.card .overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  /* одинаковые для карточек свойства   background-size: cover; и background-position: center; заданы общим классом card */
 }
 
 .card_type_film {
   background: url(../images/card-lot-01.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .card_type_book {
   background: url(../images/card-lot-02.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .card_type_picture {
   background: url(../images/card-lot-03.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .card__title {
@@ -242,7 +233,7 @@
   margin-top: 33px;
   font-size: 20px;
   line-height: 120%;
-  border-bottom: 1px solid currentColor;
+  /* удалено лишнее свойство - border-bottom: 1px solid currentColor; */
   color: #000;
 }
 
